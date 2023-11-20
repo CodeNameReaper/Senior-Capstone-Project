@@ -1,0 +1,125 @@
+<ContentNavigationDrawer>
+
+    MDList:
+
+        OneLineListItem:
+            text: "Welcome"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Welcome"
+
+        OneLineListItem:
+            text: "Oil Level Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Oil Level Check"
+
+        OneLineListItem:
+            text: "Power Steering Fluid Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Power Steering Fluid Check"
+                         
+        OneLineListItem:
+            text: "Winshield Washer Fluid Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Winshield Washer Fluid Check"
+                
+        OneLineListItem:
+            text: "Brake FLuid Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Brake FLuid Check"
+                
+        OneLineListItem:
+            text: "Coolant Level Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Coolant Level Check"
+        
+        OneLineListItem:
+            text: "Tire Pressure Check"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "Tire Pressure Check"
+          
+MDScreen:
+
+    MDTopAppBar:
+        pos_hint: {"top": 1}
+        elevation: 4
+        title: "Basic Automotive Maintenance"
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+      
+
+        
+    MDNavigationLayout:
+
+        MDScreenManager:
+            id: screen_manager
+
+            MDScreen:
+                name: "Welcome"
+
+                Image:
+                    source:"images/welcome.png"   
+                    keep_ratio: True
+               
+            MDScreen:
+                name: "Oil Level Check"
+                              
+                Image:
+                    source:"images/oil.jpg"  
+                    keep_ratio: True
+                    
+            MDScreen:
+                name: "Power Steering Fluid Check"
+                   
+                Image:
+                    source:"images/steering.jpg" 
+                    keep_ratio: True
+            
+            MDScreen:
+                name: "Winshield Washer Fluid Check"
+                                
+                Image:
+                    source:"images/windshield.jpg" 
+                    keep_ratio: True
+               
+            MDScreen:
+                name: "Brake FLuid Check"              
+                    
+                Image:
+                    source:"images/brake.jpg" 
+                    keep_ratio: True
+                    
+            MDScreen:
+                name: "Coolant Level Check"
+              
+                Image:
+                    source: "images/coolant.jpg" 
+                    keep_ratio: True
+            
+            MDScreen:
+                name: "Tire Pressure Check"
+                
+                Image:
+                    
+                    source: "images/tire.jpg" 
+                    keep_ratio: True
+                    
+                     
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+    MDTopAppBar:
+        pos_hint: {"bottom": 1}
+        elevation: 4
