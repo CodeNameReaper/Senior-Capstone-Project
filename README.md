@@ -1,2 +1,2 @@
-# Senior-Capstone-Project
+# Senior-Capstone-Project-App-&-Website
 Senior Project
